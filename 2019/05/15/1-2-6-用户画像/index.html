@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="用户画像,用户分析,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一. 定义user profile vs user persona曾经有一次，与运营的同学讨论用户画像，发现他们对用户画像的理解，和我有很大的差别，回来之后查了一下，发现用户画像的两个定义。  user profile基于真实存在的数据，包括用户填写的资料，用户在系统里的行为，经过统计/算法计算形成的众多的标签。把用户数据化，反应的是“真实的历史”。 user persona基于访谈/用户调查问卷">
+<meta name="keywords" content="用户画像,用户分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用户画像">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/1-2-6-用户画像/index.html">
+<meta property="og:site_name" content="做数据的攻城锤">
+<meta property="og:description" content="一. 定义user profile vs user persona曾经有一次，与运营的同学讨论用户画像，发现他们对用户画像的理解，和我有很大的差别，回来之后查了一下，发现用户画像的两个定义。  user profile基于真实存在的数据，包括用户填写的资料，用户在系统里的行为，经过统计/算法计算形成的众多的标签。把用户数据化，反应的是“真实的历史”。 user persona基于访谈/用户调查问卷">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-16T03:58:51.052Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用户画像">
+<meta name="twitter:description" content="一. 定义user profile vs user persona曾经有一次，与运营的同学讨论用户画像，发现他们对用户画像的理解，和我有很大的差别，回来之后查了一下，发现用户画像的两个定义。  user profile基于真实存在的数据，包括用户填写的资料，用户在系统里的行为，经过统计/算法计算形成的众多的标签。把用户数据化，反应的是“真实的历史”。 user persona基于访谈/用户调查问卷">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/15/1-2-6-用户画像/">
+
+
+
+
+
+  <title>用户画像 | 做数据的攻城锤</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">做数据的攻城锤</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">大数据|数据仓库|数据分析|用户分析|用户画像|用户增长</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/15/1-2-6-用户画像/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大锤">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做数据的攻城锤">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">用户画像</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-15T18:36:48+08:00">
+                2019-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/说数/" itemprop="url" rel="index">
+                    <span itemprop="name">说数</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+          
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一-定义"><a href="#一-定义" class="headerlink" title="一. 定义"></a>一. 定义</h1><h2 id="user-profile-vs-user-persona"><a href="#user-profile-vs-user-persona" class="headerlink" title="user profile vs user persona"></a><font size="4"><strong><em>user profile</em></strong> vs <strong><em>user persona</em></strong></font></h2><p>曾经有一次，与运营的同学讨论用户画像，发现他们对用户画像的理解，和我有很大的差别，回来之后查了一下，发现用户画像的两个定义。</p>
+<ul>
+<li><strong>user profile</strong><br>基于真实存在的数据，包括用户填写的资料，用户在系统里的行为，经过统计/算法计算形成的众多的标签。把用户数据化，反应的是“真实的历史”。</li>
+<li><strong>user persona</strong><br>基于访谈/用户调查问卷，答案汇总得到的一个抽象的用户形象，以便让我们得知我们的产品是为什么人服务。收集意见，包括使用感受/将来的新功能需求等。</li>
+</ul>
+<h2 id="区别与联系"><a href="#区别与联系" class="headerlink" title="区别与联系"></a><font size="4">区别与联系</font></h2><ul>
+<li>user profile 的标签是来自用户的真实行为，是一种客观描述。而user persona 是用户主观填写的，会有一些偏差。如果产品/运营人员都根据user persona进行产品设计和活动，不一定是最好的指导。（但是还是能真实反应用户需求的，有指导意义。有一些产品经理非常自我的调整产品，就因为乔布斯当年说的各种经典语录比如用户是傻子根本不知道自己想要什么。乔布斯：我没说过）</li>
+<li><p>user persona 也会用到 user profile 的真实数据来进行总结，包括在做调研的时候，需要依据userprofile 的数据进行用户分配，比如一个产品男女比例是8:2 ，那么在做用户访谈/调查问卷的时候，也需要按这个比例来进行。</p>
+</li>
+<li><p>数据分析中说的用户画像往往指的是 user profile，本次说的也是这个。</p>
+</li>
+</ul>
+<h1 id="二-应用"><a href="#二-应用" class="headerlink" title="二. 应用"></a>二. 应用</h1><p>优化产品，服务用户，发布报告</p>
+<h2 id="微观"><a href="#微观" class="headerlink" title="微观"></a><font size="4">微观</font></h2><p>让用户和公司产品“直接对话”。根据用户行为日志，通过数据分析，得知用户的客观感受，知道用户想要什么，做好<strong>产品优化/推荐/搜索/风控/运营策略/广告/用户增长</strong>，从而产品优化/提升用户体验，达到双赢。<br>对于产品，很多改动，甚至登陆按钮更换位置，都需要根据用户真实的使用反馈来得知是优化，还是负优化。<br>对于用户，通过推荐让用户获得喜欢的内容是用户停留在产品的最好最直接的方法，而自然人识别+用户画像，则是推荐的基础。与算法相辅相成，才能“投其所好”，达到更好的推荐效果。<br>(题外话，自然人识别，曾经是一个非常困扰人的问题，现在移动互联网时代，手机号是一个非常好的自然人识别标识，辅以其他手段（比如cookies反向注入等），难度降低很多。)<br>另外，对不同层级的用户(这个层级的定义是根据用户对产品的使用情况，把用户分为普通/优质/核心等层次。)给予不同的服务。比如游戏行业对大R有专属客服。其它行业不像游戏这样有明确的区分标准——充值，所以就需要用户画像，从多个方向寻找核心用户。</p>
+<h2 id="宏观"><a href="#宏观" class="headerlink" title="宏观"></a><font size="4">宏观</font></h2><p>产品对用户的影响，可能会进一步，影响到现实生活。比如滴滴打车对拥堵的改善/碳排放的减少有什么贡献(<a href="http://www.199it.com/archives/432118.html" target="_blank" rel="noopener">2015年中国智能出行大数据报告</a>)，短视频对区域旅游带来的影响，行业报告(<a href="http://www.199it.com/archives/548711.html" target="_blank" rel="noopener">2016微博短视频行业报告</a>)。等等。这些就可以通过年度报告等方式输出出去。</p>
+<h1 id="三-构建"><a href="#三-构建" class="headerlink" title="三. 构建"></a>三. 构建</h1><p>现在说一下重点：用户画像的构建。用户画像的核心是：业务。数据所做的都是为了产品做准备，脱离产品的数据没有太多意义。（比如某cdn公司，每天的压缩数据有120T，但是没办法进行有效/有意义的分析与挖掘）</p>
+<h2 id="1-数据来源"><a href="#1-数据来源" class="headerlink" title="1.数据来源"></a><font size="4">1.数据来源</font></h2><ul>
+<li>静态数据<br>用户主动填写/认证过的数据，比如手机号/邮箱等，多数是缓慢变化的数据。</li>
+<li>动态数据<br>用户与产品的一切交互行为，包括查看点击喜欢讨厌下单付款评价等等。<br>人的爱好是可能会变的，所以动态数据也应该是变化的。比如一个用户喜欢动漫，过两年可能还喜欢；喜欢苹果，过两年可能就喜欢香蕉了。<br>同时也要注意<strong>热点</strong>，时间特性更显著，来的快去的快，比如六小龄童的两开花。</li>
+</ul>
+<h2 id="2-标签与可用性"><a href="#2-标签与可用性" class="headerlink" title="2.标签与可用性"></a><font size="4">2.标签与可用性</font></h2><h3 id="标签内容"><a href="#标签内容" class="headerlink" title="标签内容"></a><font size="3">标签内容</font></h3><ul>
+<li>人口属性——用户是谁<br>性别年龄职业人生阶段等，可从静态数据出，比如身份证号就可以得知很多信息。</li>
+<li>兴趣偏好——喜欢干什么<br>玩游戏/看动漫/看小说/看电影/美女</li>
+<li>社交习惯——众乐/独乐<br>发帖点赞留言回复分享</li>
+<li>消费意愿<br>金额频率</li>
+</ul>
+<h3 id="常见的标签"><a href="#常见的标签" class="headerlink" title="常见的标签"></a><font size="3">常见的标签</font></h3><ul>
+<li>通用的标签<br>（上网找几个图）</li>
+<li>特殊标签<br>特殊活动，热点等。</li>
+</ul>
+<h3 id="可用性"><a href="#可用性" class="headerlink" title="可用性"></a><font size="3">可用性</font></h3><p>做出的用户画像能否被业务方接受并使用，可以从下面几个方面来衡量。</p>
+<ul>
+<li>多样性<br>用户画像体系中，包含的标签越多，对业务的帮助越大。<br>产品形态不同，获取的数据不同，得到的标签内容/难度也不相同。</li>
+<li>覆盖率<br>覆盖率指的是某个维度覆盖的用户比例，比如年龄标签，可以覆盖70%的用户，性别标签可以覆盖20%的用户，那年龄标签可用性更高。</li>
+<li>准确率<br>准确率指的是某个维度的准确程度。很简单，70%的准确率比50%的要好</li>
+<li>粒度<br>随着用户行为增多，粒度就越细。但是不是越细越好，要看具体情况而定。<br>比如下面三份年龄维度的粒度举例<ul>
+<li>20岁以上/20岁以下</li>
+<li>20岁以下/20～30岁/30～40岁</li>
+<li>20/21/22/23<br>这三个粒度中第二种是更常用的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-步骤"><a href="#3-步骤" class="headerlink" title="3.步骤"></a><font size="4">3.步骤</font></h2><h3 id="熟悉产品"><a href="#熟悉产品" class="headerlink" title="熟悉产品"></a><font size="3">熟悉产品</font></h3><p>文章开始，就提到了用户画像必须与产品密切相关，所以在做用户画像的时候，第一步要做的是：熟悉产品，知道自己的产品是干嘛的，目标是什么，用户能得到什么。</p>
+<h3 id="设计"><a href="#设计" class="headerlink" title="设计"></a><font size="3">设计</font></h3><p>依照从简单到困难，考虑通过数据能获得什么标签。<br>比如feed对用户喜好比较容易获得，能通过用户的访问直接体现，打车软件对用户位置和身份比较容易获得，但是对用户喜好/性别，比较困难。</p>
+<h3 id="动手"><a href="#动手" class="headerlink" title="动手"></a><font size="3">动手</font></h3><ul>
+<li>基于统计的标签获取（定量）<br>基于数据统计，得出用户的行为，得到一系列标签，比如用户对各主题内容的查看，对各种产品的浏览/下单行为量，对打车的时间/地点/次数统计。</li>
+<li>基于算法的标签获取（定量+定性）<br>使用聚类归类算法对用户进行处理，比如性别标签。<br>对比来说，特征的选取比算法本身要困难的多的多，往往特征选一天，算法跑一个小时，然后循环。算法这方面我不是很熟，在这里就不说了。<br>需要注意的是时间特性，要做适当的加权以及减权。</li>
+</ul>
+<h2 id="4-离线数据与实时数据"><a href="#4-离线数据与实时数据" class="headerlink" title="4.离线数据与实时数据"></a><font size="4">4.离线数据与实时数据</font></h2><ul>
+<li>离线数据<br>离线计算的计算能力强，可以计算维度/步骤比较多，更丰富的数据，缺点就是当天的行为不会被使用，画像有延迟性。对当天的行为无法做到快速反馈。</li>
+<li>实时数据<br>使用实时数据，可以让用户的使用立刻反馈到产品中，但是对数据通路/计算的要求比较高。</li>
+</ul>
+<p>离线算历史，实时算当日，一般都是共同使用。</p>
+<h2 id="5-广义的“用户”"><a href="#5-广义的“用户”" class="headerlink" title="5.广义的“用户”"></a><font size="4">5.广义的“用户”</font></h2><p>用户画像不单单指使用的人，对内容也适用，比如商品/文章/广告等。有了自己的标签，推荐更精准。</p>
+<h1 id="四-总结"><a href="#四-总结" class="headerlink" title="四. 总结"></a>四. 总结</h1><ul>
+<li>用户画像是为产品服务的，必须要有明确目标再做。</li>
+<li>数据要多维度对比查看，单独看某一个标签意义不大。</li>
+<li>不要迷信数据和算法，一定要和常识做对比，反之亦然。得到的数据可能和常识完全一样，没什么“特色”“指导意义”，但是没关系，数据本身就是反馈真实使用情况的。</li>
+<li>要有大量数据。虽说大数据 != 大量数据，但是准确全面的用户画像还是要有数据喂。</li>
+<li>无论黑猫白猫，抓到耗子就是好猫。不要迷信算法，统计也能出好结果。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/用户画像/" rel="tag"># 用户画像</a>
+          
+            <a href="/tags/用户分析/" rel="tag"># 用户分析</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/14/1-3-例子/" rel="next" title="1-3-例子">
+                <i class="fa fa-chevron-left"></i> 1-3-例子
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">大锤</p>
+              <p class="site-description motion-element" itemprop="description">一直做数据</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-定义"><span class="nav-number">1.</span> <span class="nav-text">一. 定义</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#user-profile-vs-user-persona"><span class="nav-number">1.1.</span> <span class="nav-text">user profile vs user persona</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别与联系"><span class="nav-number">1.2.</span> <span class="nav-text">区别与联系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-应用"><span class="nav-number">2.</span> <span class="nav-text">二. 应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#微观"><span class="nav-number">2.1.</span> <span class="nav-text">微观</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宏观"><span class="nav-number">2.2.</span> <span class="nav-text">宏观</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-构建"><span class="nav-number">3.</span> <span class="nav-text">三. 构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据来源"><span class="nav-number">3.1.</span> <span class="nav-text">1.数据来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-标签与可用性"><span class="nav-number">3.2.</span> <span class="nav-text">2.标签与可用性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标签内容"><span class="nav-number">3.2.1.</span> <span class="nav-text">标签内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的标签"><span class="nav-number">3.2.2.</span> <span class="nav-text">常见的标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可用性"><span class="nav-number">3.2.3.</span> <span class="nav-text">可用性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-步骤"><span class="nav-number">3.3.</span> <span class="nav-text">3.步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#熟悉产品"><span class="nav-number">3.3.1.</span> <span class="nav-text">熟悉产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计"><span class="nav-number">3.3.2.</span> <span class="nav-text">设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动手"><span class="nav-number">3.3.3.</span> <span class="nav-text">动手</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-离线数据与实时数据"><span class="nav-number">3.4.</span> <span class="nav-text">4.离线数据与实时数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-广义的“用户”"><span class="nav-number">3.5.</span> <span class="nav-text">5.广义的“用户”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-总结"><span class="nav-number">4.</span> <span class="nav-text">四. 总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">大锤</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共4k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
