@@ -1,74 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>http://yoursite.com/2019/05/14/1-2-%E6%8A%80%E8%83%BD/</loc>
+
     
-    <lastmod>2019-05-16T04:03:20.941Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/05/15/1-2-6-%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/</loc>
-    
-    <lastmod>2019-05-16T03:58:51.052Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/05/14/2-%E6%9D%82%E8%B0%88/</loc>
-    
-    <lastmod>2019-05-15T08:35:25.474Z</lastmod>
-    
-  </url>
-  
   <url>
     <loc>http://yoursite.com/2019/05/14/1-3-%E4%BE%8B%E5%AD%90/</loc>
+    <lastmod>2019-05-16T06:36:36.226Z</lastmod>
+    <data>
+        <display>
+        <title>例子</title>
+        <pubTime>2019-05-14T10:05:19.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
     
-    <lastmod>2019-05-14T10:05:32.270Z</lastmod>
+  <url>
+    <loc>http://yoursite.com/2019/05/14/1-2-%E6%8A%80%E8%83%BD/</loc>
+    <lastmod>2019-05-16T04:03:20.941Z</lastmod>
+    <data>
+        <display>
+        <title>数据流程</title>
+        <pubTime>2019-05-14T09:38:03.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
     
-  </url>
-  
+  <url>
+    <loc>http://yoursite.com/2019/05/15/1-2-6-%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/</loc>
+    <lastmod>2019-05-16T03:58:51.052Z</lastmod>
+    <data>
+        <display>
+        <title>用户画像</title>
+        <pubTime>2019-05-15T10:36:48.000Z</pubTime>
+        
+        <tag>用户画像 </tag>
+         
+        <tag>用户分析 </tag>
+         
+         
+           
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2019/05/14/2-%E6%9D%82%E8%B0%88/</loc>
+    <lastmod>2019-05-15T08:35:25.474Z</lastmod>
+    <data>
+        <display>
+        <title>杂谈</title>
+        <pubTime>2019-05-14T07:51:14.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://yoursite.com/2019/05/14/1-1-%E7%BB%8F%E5%8E%86/</loc>
-    
     <lastmod>2019-05-14T09:44:08.491Z</lastmod>
+    <data>
+        <display>
+        <title>经历</title>
+        <pubTime>2019-05-14T09:08:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
     
-  </url>
-  
   <url>
     <loc>http://yoursite.com/2019/05/14/%E7%9B%AE%E5%BD%95/</loc>
-    
     <lastmod>2019-05-14T09:42:13.430Z</lastmod>
+    <data>
+        <display>
+        <title>索引</title>
+        <pubTime>2019-05-14T06:21:48.000Z</pubTime>
+        
+        <tag>大数据 </tag>
+         
+        <tag>数据仓库 </tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
     
-  </url>
-  
   <url>
     <loc>http://yoursite.com/2019/05/14/1-%E6%94%BB%E5%9F%8E%E9%94%A4%E8%AF%B4%E6%95%B0/</loc>
-    
     <lastmod>2019-05-14T09:41:39.268Z</lastmod>
+    <data>
+        <display>
+        <title>攻城锤说数</title>
+        <pubTime>2019-05-14T07:50:58.000Z</pubTime>
+        
+        <tag>数据仓库 </tag>
+         
+        <tag>数据分析 </tag>
+         
+        <tag>用户增长 </tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
     
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
     
-    <lastmod>2019-05-14T08:10:23.846Z</lastmod>
     
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2019-05-14T08:08:44.995Z</lastmod>
-    
-  </url>
-  
   <url>
     <loc>http://yoursite.com/2019/05/13/hello-world/</loc>
-    
     <lastmod>2019-05-14T07:26:51.089Z</lastmod>
-    
-  </url>
-  
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2019-05-13T11:38:59.063Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
 </urlset>
