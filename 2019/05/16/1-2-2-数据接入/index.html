@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。  1 数据类型 过程数据 结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。数据接入的方法有两种 直接获取每天某时间点(比如0点)用数据导入工具sqoop/datax从线上库导入到hive中。sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在">
+<meta name="description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。良好的日志包含什么人什么时间在什么位置做了什么得到什么结果。  1 数据类型结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。 过程数据  用户在产品每一步操作的记录。 在分析中，过程数据更有意义，因为如果只看结果数据，很多行为会丢掉。比如在电商的用户表中，有“余额”字段，前一天0点余额为0，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据接入">
 <meta property="og:url" content="http://yoursite.com/2019/05/16/1-2-2-数据接入/index.html">
 <meta property="og:site_name" content="做数据的攻城锤">
-<meta property="og:description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。  1 数据类型 过程数据 结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。数据接入的方法有两种 直接获取每天某时间点(比如0点)用数据导入工具sqoop/datax从线上库导入到hive中。sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在">
+<meta property="og:description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。良好的日志包含什么人什么时间在什么位置做了什么得到什么结果。  1 数据类型结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。 过程数据  用户在产品每一步操作的记录。 在分析中，过程数据更有意义，因为如果只看结果数据，很多行为会丢掉。比如在电商的用户表中，有“余额”字段，前一天0点余额为0，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T04:21:53.613Z">
+<meta property="og:updated_time" content="2019-05-17T08:18:37.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据接入">
-<meta name="twitter:description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。  1 数据类型 过程数据 结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。数据接入的方法有两种 直接获取每天某时间点(比如0点)用数据导入工具sqoop/datax从线上库导入到hive中。sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在">
+<meta name="twitter:description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。良好的日志包含什么人什么时间在什么位置做了什么得到什么结果。  1 数据类型结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。 过程数据  用户在产品每一步操作的记录。 在分析中，过程数据更有意义，因为如果只看结果数据，很多行为会丢掉。比如在电商的用户表中，有“余额”字段，前一天0点余额为0，">
 
 
 
@@ -348,34 +348,27 @@
 
       
         <ul>
-<li>数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。</li>
+<li>数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。良好的日志包含<strong>什么人什么时间在什么位置做了什么得到什么结果</strong>。</li>
 </ul>
-<h2 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1 数据类型"></a>1 数据类型</h2><ul>
-<li>过程数据</li>
-<li>结果数据<br>也叫<strong>数据切片</strong>/<strong>数据快照</strong>，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。<br>数据接入的方法有两种<ol>
+<h2 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1 数据类型"></a>1 数据类型</h2><h3 id="结果数据"><a href="#结果数据" class="headerlink" title="结果数据"></a><font size="4">结果数据</font></h3><p>也叫<strong>数据切片</strong>/<strong>数据快照</strong>，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。</p>
+<h3 id="过程数据"><a href="#过程数据" class="headerlink" title="过程数据"></a><font size="4">过程数据</font></h3><p>  用户在产品每一步操作的记录。</p>
+<p>在分析中，过程数据更有意义，因为如果只看结果数据，很多行为会丢掉。比如在电商的用户表中，有“余额”字段，前一天0点余额为0，第二天充值100又消费掉了，那余额还是0，从两份结果数据看不出什么来，需要过程数据才能具体分析。<br>过程数据是可以合并成结果数据的，但是为什么还要单独抽取存放结果数据呢？因为有一些行为，比如验证手机/邮箱，这个过程对分析来说没有意义，只关注最后的验证结果就可以了。</p>
+<h2 id="2-接入方法"><a href="#2-接入方法" class="headerlink" title="2 接入方法"></a>2 接入方法</h2><h3 id="结果数据-1"><a href="#结果数据-1" class="headerlink" title="结果数据"></a><font size="4">结果数据</font></h3><ol>
 <li>直接获取<br>每天某时间点(比如0点)用数据导入工具<strong>sqoop</strong>/<strong>datax</strong>从线上库导入到hive中。<br>sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在开发的datax2是分布式的，不知道具体情况。<br>优点: 操作简单<br>缺点: 消耗线上资源，不过一般都是从备库导入，不会影响线上环境。另外在导入的时候，数据可能正在修改，得到的数据会有微量偏差。</li>
 <li>间接获取<br>在第一次导入数据库快照数据之后，后续不直接从数据库获取，而是解析数据库的binlong，把操作解析成数据，与快照数据合并成新的快照数据。<br>优点: 对线上库/备库无任何影响，通过日志文件来处理数据<br>缺点: 可能解析出错，与线上库数据有差别。可以每隔一段时间导入线上库数据做修正。</li>
 </ol>
-</li>
-</ul>
-<hr>
-<ul>
-<li>类型<ul>
-<li>过程数据</li>
-<li>结果数据</li>
+<h3 id="过程数据-1"><a href="#过程数据-1" class="headerlink" title="过程数据"></a><font size="4">过程数据</font></h3><ol>
+<li>服务器文件定时推送<br>虽然基本没人用，但是这个确实是一个方法，每天定时把服务器日志汇总到几台服务器上，然后推送到集群。<br>缺点: 日志同时传输，瞬时网络压力大。无法做实时分析。</li>
+<li>实时收集<br>用<strong>收集工具(flume)</strong>收集数据，通过<strong>管道(kafka)</strong>数据传输到数据中心，文件落地，传入集群。<br>优点:<ul>
+<li>流量平滑。</li>
+<li>可离线使用，也可实时消费。</li>
 </ul>
 </li>
-<li>时效性<ul>
-<li>离线</li>
-<li>实时</li>
-</ul>
-</li>
-<li>过程数据接入方式<ul>
-<li>client产生 常见于网页/app 比如Google Analytics</li>
-<li>server产生</li>
-</ul>
-</li>
-</ul>
+</ol>
+<p>现在绝大多数公司都是实时收集使用，基于开源工具二次开发，让公司内部使用更简单。</p>
+<h2 id="3-日志产生与传输"><a href="#3-日志产生与传输" class="headerlink" title="3 日志产生与传输"></a>3 日志产生与传输</h2><p>日志落地，一定是服务端进行的。但是数据产生，则可能是客户端/服务器产生的。</p>
+<h3 id="服务端日志"><a href="#服务端日志" class="headerlink" title="服务端日志"></a><font size="4">服务端日志</font></h3><p>容易理解，服务端做了什么就记什么。直接产生日志文件就可以了。</p>
+<h3 id="客户端日志"><a href="#客户端日志" class="headerlink" title="客户端日志"></a><font size="4">客户端日志</font></h3><p>客户端日志，会把用户一段时间的行为打包上传，服务器获取这个日志包，落到文件中。</p>
 
       
     </div>
@@ -550,7 +543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据类型"><span class="nav-number">1.</span> <span class="nav-text">1 数据类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据类型"><span class="nav-number">1.</span> <span class="nav-text">1 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结果数据"><span class="nav-number">1.1.</span> <span class="nav-text">结果数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程数据"><span class="nav-number">1.2.</span> <span class="nav-text">过程数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-接入方法"><span class="nav-number">2.</span> <span class="nav-text">2 接入方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结果数据-1"><span class="nav-number">2.1.</span> <span class="nav-text">结果数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程数据-1"><span class="nav-number">2.2.</span> <span class="nav-text">过程数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-日志产生与传输"><span class="nav-number">3.</span> <span class="nav-text">3 日志产生与传输</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端日志"><span class="nav-number">3.1.</span> <span class="nav-text">服务端日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端日志"><span class="nav-number">3.2.</span> <span class="nav-text">客户端日志</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -593,16 +586,9 @@
 
 
 
-<!--
-<div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
--->
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.4k字</span>
+  <span class="post-count">博客全站共4.9k字</span>
 </div>
         
 <div class="busuanzi-count">
