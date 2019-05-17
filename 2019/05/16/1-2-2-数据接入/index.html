@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="做数据的攻城锤">
 <meta property="og:description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。  1 数据类型 过程数据 结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。数据接入的方法有两种 直接获取每天某时间点(比如0点)用数据导入工具sqoop/datax从线上库导入到hive中。sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T03:53:35.830Z">
+<meta property="og:updated_time" content="2019-05-17T04:21:53.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据接入">
 <meta name="twitter:description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。  1 数据类型 过程数据 结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。数据接入的方法有两种 直接获取每天某时间点(比如0点)用数据导入工具sqoop/datax从线上库导入到hive中。sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在">
@@ -353,8 +353,8 @@
 <h2 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1 数据类型"></a>1 数据类型</h2><ul>
 <li>过程数据</li>
 <li>结果数据<br>也叫<strong>数据切片</strong>/<strong>数据快照</strong>，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。<br>数据接入的方法有两种<ol>
-<li>直接获取<br>每天某时间点(比如0点)用数据导入工具<strong>sqoop</strong>/<strong>datax</strong>从线上库导入到hive中。<br>sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在开发的datax2是分布式的，不知道具体情况。</li>
-<li>间接获取<br>在第一次导入数据库数据之后</li>
+<li>直接获取<br>每天某时间点(比如0点)用数据导入工具<strong>sqoop</strong>/<strong>datax</strong>从线上库导入到hive中。<br>sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在开发的datax2是分布式的，不知道具体情况。<br>优点: 操作简单<br>缺点: 消耗线上资源，不过一般都是从备库导入，不会影响线上环境。另外在导入的时候，数据可能正在修改，得到的数据会有微量偏差。</li>
+<li>间接获取<br>在第一次导入数据库快照数据之后，后续不直接从数据库获取，而是解析数据库的binlong，把操作解析成数据，与快照数据合并成新的快照数据。<br>优点: 对线上库/备库无任何影响，通过日志文件来处理数据<br>缺点: 可能解析出错，与线上库数据有差别。可以每隔一段时间导入线上库数据做修正。</li>
 </ol>
 </li>
 </ul>
@@ -593,9 +593,20 @@
 
 
 
+<!--
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+-->
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共4.4k字</span>
+</div>
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
