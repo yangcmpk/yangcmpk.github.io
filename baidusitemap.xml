@@ -3,6 +3,39 @@
 
     
   <url>
+    <loc>http://yoursite.com/2019/05/16/1-2-2-%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%85%A5/</loc>
+    <lastmod>2019-05-17T03:53:35.830Z</lastmod>
+    <data>
+        <display>
+        <title>数据接入</title>
+        <pubTime>2019-05-16T10:34:35.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2019/05/14/1-2-%E6%8A%80%E8%83%BD/</loc>
+    <lastmod>2019-05-16T10:35:29.213Z</lastmod>
+    <data>
+        <display>
+        <title>数据流程</title>
+        <pubTime>2019-05-14T09:38:03.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2019/05/14/1-3-%E4%BE%8B%E5%AD%90/</loc>
     <lastmod>2019-05-16T06:40:35.419Z</lastmod>
     <data>
@@ -37,21 +70,6 @@
              
               <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2019/05/14/1-2-%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2019-05-16T04:03:20.941Z</lastmod>
-    <data>
-        <display>
-        <title>数据流程</title>
-        <pubTime>2019-05-14T09:38:03.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
