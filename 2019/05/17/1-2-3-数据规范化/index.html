@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据仓库,大数据,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
-<meta name="keywords" content="数据仓库,大数据">
+<meta name="description" content="数据规范化包括两种  把非结构化数据转化成结构化数据。 数据一致性转化。  1. 非结构化数据转化成结构化数据结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常">
 <meta property="og:type" content="article">
-<meta property="og:title" content="索引">
-<meta property="og:url" content="http://yoursite.com/2019/05/14/目录/index.html">
+<meta property="og:title" content="数据规范化-ETL">
+<meta property="og:url" content="http://yoursite.com/2019/05/17/1-2-3-数据规范化/index.html">
 <meta property="og:site_name" content="做数据的攻城锤">
-<meta property="og:description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
+<meta property="og:description" content="数据规范化包括两种  把非结构化数据转化成结构化数据。 数据一致性转化。  1. 非结构化数据转化成结构化数据结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-14T09:42:13.430Z">
+<meta property="og:updated_time" content="2019-05-17T10:09:52.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="索引">
-<meta name="twitter:description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
+<meta name="twitter:title" content="数据规范化-ETL">
+<meta name="twitter:description" content="数据规范化包括两种  把非结构化数据转化成结构化数据。 数据一致性转化。  1. 非结构化数据转化成结构化数据结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/14/目录/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/17/1-2-3-数据规范化/">
 
 
 
 
 
-  <title>索引 | 做数据的攻城锤</title>
+  <title>数据规范化-ETL | 做数据的攻城锤</title>
   
 
 
@@ -253,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/目录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/17/1-2-3-数据规范化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大锤">
@@ -270,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">索引</h1>
+          <h1 class="post-title" itemprop="name headline">数据规范化-ETL</h1>
         
 
         <div class="post-meta">
@@ -282,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T14:21:48+08:00">
-                2019-05-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-17T16:53:27+08:00">
+                2019-05-17
               </time>
             
 
@@ -292,6 +291,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/说数/" itemprop="url" rel="index">
+                    <span itemprop="name">说数</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -313,10 +334,6 @@
           
 
           
-            <i class="fa fa-thumb-tack"></i>
-            <font color="7D26CD">置顶</font>
-            <span class="post-meta-divider">|</span>
-          
         </div>
       </header>
     
@@ -330,9 +347,19 @@
       
 
       
-        <h1 id="攻城锤说数"><a href="#攻城锤说数" class="headerlink" title="攻城锤说数"></a><a href="/2019/05/14/1-攻城锤说数/">攻城锤说数</a></h1><p>工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。</p>
-<h1 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a><a href="/2019/05/14/2-杂谈/">杂谈</a></h1><p>姑妄言之姑妄听之。</p>
-
+        <p>数据规范化包括两种</p>
+<ol>
+<li>把非结构化数据转化成结构化数据。</li>
+<li>数据一致性转化。</li>
+</ol>
+<h2 id="1-非结构化数据转化成结构化数据"><a href="#1-非结构化数据转化成结构化数据" class="headerlink" title="1. 非结构化数据转化成结构化数据"></a>1. 非结构化数据转化成结构化数据</h2><h3 id="结构化数据-vs-非结构化数据"><a href="#结构化数据-vs-非结构化数据" class="headerlink" title="结构化数据 vs 非结构化数据"></a>结构化数据 vs 非结构化数据</h3><ul>
+<li><p>结构化数据<br>关系数据库中的数据，可用sql直接搜索。</p>
+</li>
+<li><p>非结构化数据<br>理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。</p>
+</li>
+</ul>
+<p>结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常由不容易搜索的数据组成。结构化和非结构化不是表示它们之间有冲突，仅仅是看产品的选择：关系数据库中存储的结构化数据，其它就用非结构化数据。<br>在关系数据库中的结构化数据，已经有非常成熟的分析方法，而非结构化数据，没有一个直接的通用的使用方法，并且非结构化数据越来越多，越来越丰富，包含的信息也越发又价值。怎么从这些非结构化数据中获取信息，是产品迫切需要的。</p>
+<h3 id="数据转化"><a href="#数据转化" class="headerlink" title="数据转化"></a>数据转化</h3>
       
     </div>
     
@@ -347,14 +374,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/数据仓库/" rel="tag"># 数据仓库</a>
-          
-            <a href="/tags/大数据/" rel="tag"># 大数据</a>
-          
-        </div>
-      
 
       
       
@@ -364,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/13/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/05/16/1-2-2-数据接入/" rel="next" title="数据接入">
+                <i class="fa fa-chevron-left"></i> 数据接入
               </a>
             
           </div>
@@ -374,8 +393,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/14/1-攻城锤说数/" rel="prev" title="攻城锤说数">
-                攻城锤说数 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/18/2-3-3-kylin的混合模型hybrid/" rel="prev" title="kylin的混合模型hybrid">
+                kylin的混合模型hybrid <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -518,7 +537,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#攻城锤说数"><span class="nav-number">1.</span> <span class="nav-text">攻城锤说数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#杂谈"><span class="nav-number">2.</span> <span class="nav-text">杂谈</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-非结构化数据转化成结构化数据"><span class="nav-number">1.</span> <span class="nav-text">1. 非结构化数据转化成结构化数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化数据-vs-非结构化数据"><span class="nav-number">1.1.</span> <span class="nav-text">结构化数据 vs 非结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据转化"><span class="nav-number">1.2.</span> <span class="nav-text">数据转化</span></a></li></ol></li></ol></div>
             
 
           </div>

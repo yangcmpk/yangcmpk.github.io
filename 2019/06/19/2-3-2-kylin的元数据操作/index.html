@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据仓库,大数据,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
-<meta name="keywords" content="数据仓库,大数据">
+<meta name="description" content="kylin的页面上可操作的行为不多，有很多操作是需要通过http接口来传递命令实现的。下面分别进行说明 1. 界面可操作的 enable/ready的cube disable的cube       2. 界面无操作 删除segment只能删除第一个或者最后一个segment，做不到删除中间位置的。 1curl -X DELETE --user ADMIN:kylin -H &amp;quot;Conten">
 <meta property="og:type" content="article">
-<meta property="og:title" content="索引">
-<meta property="og:url" content="http://yoursite.com/2019/05/14/目录/index.html">
+<meta property="og:title" content="kylin的元数据操作">
+<meta property="og:url" content="http://yoursite.com/2019/06/19/2-3-2-kylin的元数据操作/index.html">
 <meta property="og:site_name" content="做数据的攻城锤">
-<meta property="og:description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
+<meta property="og:description" content="kylin的页面上可操作的行为不多，有很多操作是需要通过http接口来传递命令实现的。下面分别进行说明 1. 界面可操作的 enable/ready的cube disable的cube       2. 界面无操作 删除segment只能删除第一个或者最后一个segment，做不到删除中间位置的。 1curl -X DELETE --user ADMIN:kylin -H &amp;quot;Conten">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-14T09:42:13.430Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/19/2-3-2-kylin的元数据操作/2-3-2-1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/19/2-3-2-kylin的元数据操作/2-3-2-2.jpg">
+<meta property="og:updated_time" content="2019-06-19T09:47:12.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="索引">
-<meta name="twitter:description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
+<meta name="twitter:title" content="kylin的元数据操作">
+<meta name="twitter:description" content="kylin的页面上可操作的行为不多，有很多操作是需要通过http接口来传递命令实现的。下面分别进行说明 1. 界面可操作的 enable/ready的cube disable的cube       2. 界面无操作 删除segment只能删除第一个或者最后一个segment，做不到删除中间位置的。 1curl -X DELETE --user ADMIN:kylin -H &amp;quot;Conten">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/19/2-3-2-kylin的元数据操作/2-3-2-1.jpg">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/14/目录/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/19/2-3-2-kylin的元数据操作/">
 
 
 
 
 
-  <title>索引 | 做数据的攻城锤</title>
+  <title>kylin的元数据操作 | 做数据的攻城锤</title>
   
 
 
@@ -253,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/目录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/19/2-3-2-kylin的元数据操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大锤">
@@ -270,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">索引</h1>
+          <h1 class="post-title" itemprop="name headline">kylin的元数据操作</h1>
         
 
         <div class="post-meta">
@@ -282,8 +284,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T14:21:48+08:00">
-                2019-05-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-19T16:24:00+08:00">
+                2019-06-19
               </time>
             
 
@@ -313,10 +315,6 @@
           
 
           
-            <i class="fa fa-thumb-tack"></i>
-            <font color="7D26CD">置顶</font>
-            <span class="post-meta-divider">|</span>
-          
         </div>
       </header>
     
@@ -330,8 +328,37 @@
       
 
       
-        <h1 id="攻城锤说数"><a href="#攻城锤说数" class="headerlink" title="攻城锤说数"></a><a href="/2019/05/14/1-攻城锤说数/">攻城锤说数</a></h1><p>工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。</p>
-<h1 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a><a href="/2019/05/14/2-杂谈/">杂谈</a></h1><p>姑妄言之姑妄听之。</p>
+        <p>kylin的页面上可操作的行为不多，有很多操作是需要通过http接口来传递命令实现的。下面分别进行说明</p>
+<h2 id="1-界面可操作的"><a href="#1-界面可操作的" class="headerlink" title="1. 界面可操作的"></a>1. 界面可操作的</h2><ul>
+<li>enable/ready的cube<div align="left"><br><img src="2-3-2-1.jpg" height="330" width="190"><br></div></li>
+<li>disable的cube</li>
+</ul>
+<div align="center"><br><img src="2-3-2-2.jpg" height="330" width="190"><br></div>
+
+
+
+
+<h2 id="2-界面无操作"><a href="#2-界面无操作" class="headerlink" title="2. 界面无操作"></a>2. 界面无操作</h2><ul>
+<li><p>删除segment<br>只能删除<strong>第一个</strong>或者<strong>最后一个</strong>segment，做不到删除中间位置的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X DELETE --user ADMIN:kylin -H &quot;Content-Type: application/json&quot; http://10.11.22.33:7070/kylin/api/cubes/cubename/segs/20180925000000_20180926000000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>备份元数据<br>备份全部元数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/metastore.sh backup</span><br></pre></td></tr></table></figure>
+<p>备份指定元数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh bin/metastore.sh fetch cube/cubename.json</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>恢复元数据<br>无论指定的目录是全部的还是只有某个cube的，直接恢复就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/metastore.sh restore $KYLIN_HOME/meta_backups/meta_2018_08_31_14_30_33</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清空元数据 <strong>慎用!!</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/metastore.sh reset</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清理元数据<br>一定记得要清理元数据，如果不按时清理，元数据会膨胀到无法清理的地步。<br><strong>清理之前要记得备份</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./bin/metastore.sh clean</span><br><span class="line">./bin/metastore.sh clean --delete true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除无用数据<br>随着merge drop等操作，有一些遗留的数据在hive和hbase中，要定期清理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;KYLIN_HOME&#125;/bin/kylin.sh org.apache.kylin.tool.StorageCleanupJob --delete false</span><br><span class="line">$&#123;KYLIN_HOME&#125;/bin/kylin.sh org.apache.kylin.tool.StorageCleanupJob --delete true</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -347,14 +374,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/数据仓库/" rel="tag"># 数据仓库</a>
-          
-            <a href="/tags/大数据/" rel="tag"># 大数据</a>
-          
-        </div>
-      
 
       
       
@@ -364,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/13/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/06/18/2-3-3-kylin的混合模型hybrid/" rel="next" title="kylin的混合模型hybrid">
+                <i class="fa fa-chevron-left"></i> kylin的混合模型hybrid
               </a>
             
           </div>
@@ -373,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/14/1-攻城锤说数/" rel="prev" title="攻城锤说数">
-                攻城锤说数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -518,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#攻城锤说数"><span class="nav-number">1.</span> <span class="nav-text">攻城锤说数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#杂谈"><span class="nav-number">2.</span> <span class="nav-text">杂谈</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-界面可操作的"><span class="nav-number">1.</span> <span class="nav-text">1. 界面可操作的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-界面无操作"><span class="nav-number">2.</span> <span class="nav-text">2. 界面无操作</span></a></li></ol></div>
             
 
           </div>

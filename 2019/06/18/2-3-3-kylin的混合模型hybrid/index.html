@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据仓库,大数据,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,26 @@
 
 
 
-<meta name="description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
-<meta name="keywords" content="数据仓库,大数据">
+<meta name="description" content="kylin有kylin的优点，同时它的缺点也比较明显 每个cube的数据是独立的，每次查询，只能从其中一个cube出结果(遵循最简原则，从满足查询条件的最简单cube出)。 cube不能随时添加维度和指标。想添加维度指标有两个方案。 清空cube，然后修改增加维度指标，重算。 copy一个cube，在新的cube里添加维度和指标。对于这两个方案，方案一重复计算需要很多计算资源，并且新添加的维度和指">
 <meta property="og:type" content="article">
-<meta property="og:title" content="索引">
-<meta property="og:url" content="http://yoursite.com/2019/05/14/目录/index.html">
+<meta property="og:title" content="kylin的混合模型hybrid">
+<meta property="og:url" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/index.html">
 <meta property="og:site_name" content="做数据的攻城锤">
-<meta property="og:description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
+<meta property="og:description" content="kylin有kylin的优点，同时它的缺点也比较明显 每个cube的数据是独立的，每次查询，只能从其中一个cube出结果(遵循最简原则，从满足查询条件的最简单cube出)。 cube不能随时添加维度和指标。想添加维度指标有两个方案。 清空cube，然后修改增加维度指标，重算。 copy一个cube，在新的cube里添加维度和指标。对于这两个方案，方案一重复计算需要很多计算资源，并且新添加的维度和指">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-14T09:42:13.430Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-3.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-4.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-5.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-6.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-7.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-8.jpg">
+<meta property="og:updated_time" content="2019-06-24T04:04:29.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="索引">
-<meta name="twitter:description" content="攻城锤说数工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。 杂谈姑妄言之姑妄听之。">
+<meta name="twitter:title" content="kylin的混合模型hybrid">
+<meta name="twitter:description" content="kylin有kylin的优点，同时它的缺点也比较明显 每个cube的数据是独立的，每次查询，只能从其中一个cube出结果(遵循最简原则，从满足查询条件的最简单cube出)。 cube不能随时添加维度和指标。想添加维度指标有两个方案。 清空cube，然后修改增加维度指标，重算。 copy一个cube，在新的cube里添加维度和指标。对于这两个方案，方案一重复计算需要很多计算资源，并且新添加的维度和指">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-1.jpg">
 
 
 
@@ -120,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/05/14/目录/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/">
 
 
 
 
 
-  <title>索引 | 做数据的攻城锤</title>
+  <title>kylin的混合模型hybrid | 做数据的攻城锤</title>
   
 
 
@@ -253,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/目录/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大锤">
@@ -270,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">索引</h1>
+          <h1 class="post-title" itemprop="name headline">kylin的混合模型hybrid</h1>
         
 
         <div class="post-meta">
@@ -282,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T14:21:48+08:00">
-                2019-05-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-18T16:00:47+08:00">
+                2019-06-18
               </time>
             
 
@@ -313,10 +321,6 @@
           
 
           
-            <i class="fa fa-thumb-tack"></i>
-            <font color="7D26CD">置顶</font>
-            <span class="post-meta-divider">|</span>
-          
         </div>
       </header>
     
@@ -330,8 +334,32 @@
       
 
       
-        <h1 id="攻城锤说数"><a href="#攻城锤说数" class="headerlink" title="攻城锤说数"></a><a href="/2019/05/14/1-攻城锤说数/">攻城锤说数</a></h1><p>工作七年了，一直是做数据相关的工作，从最开始的数据平台，集群搭建，工具开发优化，到数据仓库，数据分析，用户画像。做了很多东西，现在感觉又到了一个瓶颈，需要突破，之前都是“走出舒适区”，这次换个方法，总结一下过去的工作，温故而知新。</p>
-<h1 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a><a href="/2019/05/14/2-杂谈/">杂谈</a></h1><p>姑妄言之姑妄听之。</p>
+        <h2 id="kylin有kylin的优点，同时它的缺点也比较明显"><a href="#kylin有kylin的优点，同时它的缺点也比较明显" class="headerlink" title="kylin有kylin的优点，同时它的缺点也比较明显"></a>kylin有kylin的优点，同时它的缺点也比较明显</h2><ol>
+<li>每个cube的数据是独立的，每次查询，只能从其中一个cube出结果(遵循最简原则，从满足查询条件的最简单cube出)。</li>
+<li>cube不能随时添加维度和指标。想添加维度指标有两个方案。<ul>
+<li>清空cube，然后修改增加维度指标，重算。</li>
+<li>copy一个cube，在新的cube里添加维度和指标。<br>对于这两个方案，方案一重复计算需要很多计算资源，并且新添加的维度和指标在历史时间中很可能没有意义。方案二，在分别查询添加维度指标这个时间点之前和之后的数据时，都没问题，一旦出现时间区间跨越两个cube，得到的结果一定是只有老/新cube的(因为缺点1，后续可以补充几个例子的图)；可以用union来解决，但是作为多个报表数据源的多维数据的cube，无法做到也没有办法修改每个查询任务，增加union逻辑，就此，kylin的混合模型hybrid诞生了(当然，这个混合模型诞生的原因我是乱说的，但是确实能解决跨cube查数据的问题)。</li>
+</ul>
+</li>
+</ol>
+<h2 id="什么是混合模型hybrid"><a href="#什么是混合模型hybrid" class="headerlink" title="什么是混合模型hybrid"></a>什么是混合模型hybrid</h2><p>混合模型是kylin在1.0 版本提出的，把n个cube组合成一个虚拟的数据集，它本身不占存储空间，类似关系数据库中的视图，它接受查询，把查询分配给包含的cube，然后合并从结果获得的数据。</p>
+<h2 id="混合模型的创建与添加"><a href="#混合模型的创建与添加" class="headerlink" title="混合模型的创建与添加"></a>混合模型的创建与添加</h2><p>混合模型的添加主要是元数据操作。暂时(20190620)不可页面上操作。</p>
+<ol>
+<li>备份元数据</li>
+<li>在元数据备份目录下创建子目录: hybrid<br><img src="2-3-3-1.jpg" height="80" width="550"></li>
+<li>增加hybrid文件<br>在hybrid目录下创建唯一名的hybrid.json文件(一般用project名就可以)<br><img src="2-3-3-2.jpg" height="80" width="550"><br>修改其内容<br><img src="2-3-3-3.jpg" height="80" width="550"></li>
+<li>修改project文件<br>修改project目录下的json文件<br><img src="2-3-3-4.jpg" height="80" width="550"><br>增加内容<br><img src="2-3-3-5.jpg" height="80" width="550"></li>
+<li><p>元数据同步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/metastore.sh restore $KYLIN_HOME/meta_backups/meta_2018_08_31_14_30_33</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启kylin或者页面操作更新元数据<br><img src="2-3-3-6.jpg" height="80" width="550"></p>
+</li>
+</ol>
+<h2 id="混合模型的使用"><a href="#混合模型的使用" class="headerlink" title="混合模型的使用"></a>混合模型的使用</h2><p>由于混合模型对上层使用是透明的，所以在使用的时候和普通cube相同就可以了。</p>
+<ul>
+<li>全新报表<br>在配置全新的报表的时候，就正常配置就可以了，原报表不会受到影响。</li>
+<li>原报表增加维度。需要用到union。因为历史数据中是没有新加入的维度/指标，需要用空补位。<br><img src="2-3-3-7.jpg" height="80" width="550"><br>注意:Union的多个子查询，都需要添加starttime 和endtime 的宏，如下。如果不加的话，查询的时间区间会扩大。浪费资源以及给出的数据不符合自己想法<br><img src="2-3-3-8.jpg" height="80" width="550"></li>
+</ul>
 
       
     </div>
@@ -347,14 +375,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/数据仓库/" rel="tag"># 数据仓库</a>
-          
-            <a href="/tags/大数据/" rel="tag"># 大数据</a>
-          
-        </div>
-      
 
       
       
@@ -364,8 +384,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/13/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/05/17/1-2-3-数据规范化/" rel="next" title="数据规范化-ETL">
+                <i class="fa fa-chevron-left"></i> 数据规范化-ETL
               </a>
             
           </div>
@@ -374,8 +394,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/14/1-攻城锤说数/" rel="prev" title="攻城锤说数">
-                攻城锤说数 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/19/2-3-2-kylin的元数据操作/" rel="prev" title="kylin的元数据操作">
+                kylin的元数据操作 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -518,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#攻城锤说数"><span class="nav-number">1.</span> <span class="nav-text">攻城锤说数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#杂谈"><span class="nav-number">2.</span> <span class="nav-text">杂谈</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#kylin有kylin的优点，同时它的缺点也比较明显"><span class="nav-number">1.</span> <span class="nav-text">kylin有kylin的优点，同时它的缺点也比较明显</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是混合模型hybrid"><span class="nav-number">2.</span> <span class="nav-text">什么是混合模型hybrid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合模型的创建与添加"><span class="nav-number">3.</span> <span class="nav-text">混合模型的创建与添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合模型的使用"><span class="nav-number">4.</span> <span class="nav-text">混合模型的使用</span></a></li></ol></div>
             
 
           </div>
