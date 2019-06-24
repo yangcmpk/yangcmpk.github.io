@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-6.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-7.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/06/18/2-3-3-kylin的混合模型hybrid/2-3-3-8.jpg">
-<meta property="og:updated_time" content="2019-06-24T04:04:29.422Z">
+<meta property="og:updated_time" content="2019-06-24T04:07:57.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kylin的混合模型hybrid">
 <meta name="twitter:description" content="kylin有kylin的优点，同时它的缺点也比较明显 每个cube的数据是独立的，每次查询，只能从其中一个cube出结果(遵循最简原则，从满足查询条件的最简单cube出)。 cube不能随时添加维度和指标。想添加维度指标有两个方案。 清空cube，然后修改增加维度指标，重算。 copy一个cube，在新的cube里添加维度和指标。对于这两个方案，方案一重复计算需要很多计算资源，并且新添加的维度和指">
@@ -360,6 +360,14 @@
 <li>全新报表<br>在配置全新的报表的时候，就正常配置就可以了，原报表不会受到影响。</li>
 <li>原报表增加维度。需要用到union。因为历史数据中是没有新加入的维度/指标，需要用空补位。<br><img src="2-3-3-7.jpg" height="80" width="550"><br>注意:Union的多个子查询，都需要添加starttime 和endtime 的宏，如下。如果不加的话，查询的时间区间会扩大。浪费资源以及给出的数据不符合自己想法<br><img src="2-3-3-8.jpg" height="80" width="550"></li>
 </ul>
+<h2 id="混合模型的缺点"><a href="#混合模型的缺点" class="headerlink" title="混合模型的缺点"></a>混合模型的缺点</h2><ul>
+<li>添加维度指标带来的多个cube问题<br>对原报表无影响，对要修改的报表，使用union 来组合数据，如果主题更新频繁，报表的语句就会越来越复杂，</li>
+<li>解决方法<ul>
+<li><strong>简单的方法</strong>，根据具体情况进行最新cube的回溯。比如一个月整理回溯一次。回溯的时候需要删除原cube对应日期的segment，否则会出现计算重复的情况。</li>
+<li><strong>复杂的方法</strong>，自己开发工具 旧cube的数据合并到新cube，这样也不用混合模型了。开发难度高。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -538,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#kylin有kylin的优点，同时它的缺点也比较明显"><span class="nav-number">1.</span> <span class="nav-text">kylin有kylin的优点，同时它的缺点也比较明显</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是混合模型hybrid"><span class="nav-number">2.</span> <span class="nav-text">什么是混合模型hybrid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合模型的创建与添加"><span class="nav-number">3.</span> <span class="nav-text">混合模型的创建与添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合模型的使用"><span class="nav-number">4.</span> <span class="nav-text">混合模型的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#kylin有kylin的优点，同时它的缺点也比较明显"><span class="nav-number">1.</span> <span class="nav-text">kylin有kylin的优点，同时它的缺点也比较明显</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是混合模型hybrid"><span class="nav-number">2.</span> <span class="nav-text">什么是混合模型hybrid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合模型的创建与添加"><span class="nav-number">3.</span> <span class="nav-text">混合模型的创建与添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合模型的使用"><span class="nav-number">4.</span> <span class="nav-text">混合模型的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合模型的缺点"><span class="nav-number">5.</span> <span class="nav-text">混合模型的缺点</span></a></li></ol></div>
             
 
           </div>
@@ -583,7 +591,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.2k字</span>
+  <span class="post-count">博客全站共6.5k字</span>
 </div>
         
 <div class="busuanzi-count">
