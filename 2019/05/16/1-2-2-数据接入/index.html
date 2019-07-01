@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="做数据的攻城锤">
 <meta property="og:description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。良好的日志包含什么人什么时间在什么位置做了什么得到什么结果。  1 数据类型结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。 过程数据  用户在产品每一步操作的记录。 在分析中，过程数据更有意义，因为如果只看结果数据，很多行为会丢掉。比如在电商的用户表中，有“余额”字段，前一天0点余额为0，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T08:18:37.623Z">
+<meta property="og:updated_time" content="2019-06-24T10:57:56.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据接入">
 <meta name="twitter:description" content="数据接入是整个数据流程的起点。及时，完整的数据是分析挖掘的保障。良好的日志包含什么人什么时间在什么位置做了什么得到什么结果。  1 数据类型结果数据也叫数据切片/数据快照，是瞬时数据，一般都是线上数据库中的数据在某一时间点的状态。 过程数据  用户在产品每一步操作的记录。 在分析中，过程数据更有意义，因为如果只看结果数据，很多行为会丢掉。比如在电商的用户表中，有“余额”字段，前一天0点余额为0，">
@@ -354,21 +354,30 @@
 <h3 id="过程数据"><a href="#过程数据" class="headerlink" title="过程数据"></a><font size="4">过程数据</font></h3><p>  用户在产品每一步操作的记录。</p>
 <p>在分析中，过程数据更有意义，因为如果只看结果数据，很多行为会丢掉。比如在电商的用户表中，有“余额”字段，前一天0点余额为0，第二天充值100又消费掉了，那余额还是0，从两份结果数据看不出什么来，需要过程数据才能具体分析。<br>过程数据是可以合并成结果数据的，但是为什么还要单独抽取存放结果数据呢？因为有一些行为，比如验证手机/邮箱，这个过程对分析来说没有意义，只关注最后的验证结果就可以了。</p>
 <h2 id="2-接入方法"><a href="#2-接入方法" class="headerlink" title="2 接入方法"></a>2 接入方法</h2><h3 id="结果数据-1"><a href="#结果数据-1" class="headerlink" title="结果数据"></a><font size="4">结果数据</font></h3><ol>
-<li>直接获取<br>每天某时间点(比如0点)用数据导入工具<strong>sqoop</strong>/<strong>datax</strong>从线上库导入到hive中。<br>sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在开发的datax2是分布式的，不知道具体情况。<br>优点: 操作简单<br>缺点: 消耗线上资源，不过一般都是从备库导入，不会影响线上环境。另外在导入的时候，数据可能正在修改，得到的数据会有微量偏差。</li>
+<li>直接获取<br>每天某时间点(比如0点)用数据导入工具<strong>sqoop</strong>/<strong>datax</strong>从线上库导入到hive中。<br>sqoop用的比较广泛。datax是阿里开源的数据导入工具，开源版是单机执行任务，不是很好用，据说在开发的datax2是分布式的，不知道具体情况。<br>优点: 操作简单<br>缺点: 消耗线上资源，不过一般都是从备库导入，不会影响线上环境。另外在导入的时候，数据可能正在修改，得到的数据会有微量偏差。<br>*<em>sqoop的缺点</em>:<ul>
+<li>本质是mysql数据与hdfs中文件的传输，对于hive表，分区信息并不在数据文件中，所以在日期分区的表中只能冗余日期字段来实现正常导入到mysql中。</li>
+<li>数据传输会转化成mr任务来执行，需要集群中所有节点都有对目标数据库有读写权限，一旦集群添加新机器而没有及时申请权限，数据传输很可能会失败。</li>
+</ul>
+</li>
 <li>间接获取<br>在第一次导入数据库快照数据之后，后续不直接从数据库获取，而是解析数据库的binlong，把操作解析成数据，与快照数据合并成新的快照数据。<br>优点: 对线上库/备库无任何影响，通过日志文件来处理数据<br>缺点: 可能解析出错，与线上库数据有差别。可以每隔一段时间导入线上库数据做修正。</li>
 </ol>
 <h3 id="过程数据-1"><a href="#过程数据-1" class="headerlink" title="过程数据"></a><font size="4">过程数据</font></h3><ol>
 <li>服务器文件定时推送<br>虽然基本没人用，但是这个确实是一个方法，每天定时把服务器日志汇总到几台服务器上，然后推送到集群。<br>缺点: 日志同时传输，瞬时网络压力大。无法做实时分析。</li>
-<li>实时收集<br>用<strong>收集工具(flume)</strong>收集数据，通过<strong>管道(kafka)</strong>数据传输到数据中心，文件落地，传入集群。<br>优点:<ul>
+<li><p>实时收集<br>用<strong>收集工具(flume)</strong>收集数据，通过<strong>管道(kafka)</strong>数据传输到数据中心，文件落地，传入集群。<br>优点:</p>
+<ul>
 <li>流量平滑。</li>
 <li>可离线使用，也可实时消费。</li>
 </ul>
+<p>开源的日志收集工具有很多，但是留存下来被广泛使用的只有flume。</p>
 </li>
 </ol>
 <p>现在绝大多数公司都是实时收集使用，基于开源工具二次开发，让公司内部使用更简单。</p>
 <h2 id="3-日志产生与传输"><a href="#3-日志产生与传输" class="headerlink" title="3 日志产生与传输"></a>3 日志产生与传输</h2><p>日志落地，一定是服务端进行的。但是数据产生，则可能是客户端/服务器产生的。</p>
 <h3 id="服务端日志"><a href="#服务端日志" class="headerlink" title="服务端日志"></a><font size="4">服务端日志</font></h3><p>容易理解，服务端做了什么就记什么。直接产生日志文件就可以了。</p>
-<h3 id="客户端日志"><a href="#客户端日志" class="headerlink" title="客户端日志"></a><font size="4">客户端日志</font></h3><p>客户端日志，会把用户一段时间的行为打包上传，服务器获取这个日志包，落到文件中。</p>
+<h3 id="客户端日志"><a href="#客户端日志" class="headerlink" title="客户端日志"></a><font size="4">客户端日志</font></h3><ul>
+<li>客户端日志，会把用户一段时间的行为打包上传，服务器获取这个日志包，落到文件中。</li>
+<li>Google Analytics(谷歌分析)/百度统计: 页面/sdk埋点，数据实时传给服务器解析统计。</li>
+</ul>
 
       
     </div>
@@ -482,7 +491,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -504,7 +513,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -518,9 +527,9 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/da-ming-26/activities" target="_blank" title="知乎">
+                    <a href="https://www.jianshu.com/u/6d36929cd6cf" target="_blank" title="简书">
                       
-                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
                   </span>
                 
             </div>
@@ -592,7 +601,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.5k字</span>
+  <span class="post-count">博客全站共9.5k字</span>
 </div>
         
 <div class="busuanzi-count">

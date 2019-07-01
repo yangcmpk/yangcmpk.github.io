@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="数据规范化包括两种  把非结构化数据转化成结构化数据。 数据一致性转化。  1. 非结构化数据转化成结构化数据结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常">
+<meta name="description" content="一. 结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常由不容易搜索的数据组成。结构化和非结构化不是表示它们之间有冲突，仅仅是看产品的选择：关系数据库中存储的结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据规范化-ETL">
 <meta property="og:url" content="http://yoursite.com/2019/05/17/1-2-3-数据规范化/index.html">
 <meta property="og:site_name" content="做数据的攻城锤">
-<meta property="og:description" content="数据规范化包括两种  把非结构化数据转化成结构化数据。 数据一致性转化。  1. 非结构化数据转化成结构化数据结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常">
+<meta property="og:description" content="一. 结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常由不容易搜索的数据组成。结构化和非结构化不是表示它们之间有冲突，仅仅是看产品的选择：关系数据库中存储的结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T10:09:52.289Z">
+<meta property="og:updated_time" content="2019-06-28T04:27:19.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据规范化-ETL">
-<meta name="twitter:description" content="数据规范化包括两种  把非结构化数据转化成结构化数据。 数据一致性转化。  1. 非结构化数据转化成结构化数据结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常">
+<meta name="twitter:description" content="一. 结构化数据 vs 非结构化数据 结构化数据关系数据库中的数据，可用sql直接搜索。  非结构化数据理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。   结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常由不容易搜索的数据组成。结构化和非结构化不是表示它们之间有冲突，仅仅是看产品的选择：关系数据库中存储的结">
 
 
 
@@ -347,19 +347,41 @@
       
 
       
-        <p>数据规范化包括两种</p>
-<ol>
-<li>把非结构化数据转化成结构化数据。</li>
-<li>数据一致性转化。</li>
-</ol>
-<h2 id="1-非结构化数据转化成结构化数据"><a href="#1-非结构化数据转化成结构化数据" class="headerlink" title="1. 非结构化数据转化成结构化数据"></a>1. 非结构化数据转化成结构化数据</h2><h3 id="结构化数据-vs-非结构化数据"><a href="#结构化数据-vs-非结构化数据" class="headerlink" title="结构化数据 vs 非结构化数据"></a>结构化数据 vs 非结构化数据</h3><ul>
+        <h3 id="一-结构化数据-vs-非结构化数据"><a href="#一-结构化数据-vs-非结构化数据" class="headerlink" title="一. 结构化数据 vs 非结构化数据"></a>一. 结构化数据 vs 非结构化数据</h3><ul>
 <li><p>结构化数据<br>关系数据库中的数据，可用sql直接搜索。</p>
 </li>
 <li><p>非结构化数据<br>理论上来说，除了结构化的数据，都是非结构化的数据，包括日志(我们要转化的重点)，电子邮件，视频，音频，照片。</p>
 </li>
 </ul>
-<p>结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常由不容易搜索的数据组成。结构化和非结构化不是表示它们之间有冲突，仅仅是看产品的选择：关系数据库中存储的结构化数据，其它就用非结构化数据。<br>在关系数据库中的结构化数据，已经有非常成熟的分析方法，而非结构化数据，没有一个直接的通用的使用方法，并且非结构化数据越来越多，越来越丰富，包含的信息也越发又价值。怎么从这些非结构化数据中获取信息，是产品迫切需要的。</p>
-<h3 id="数据转化"><a href="#数据转化" class="headerlink" title="数据转化"></a>数据转化</h3>
+<p>结构化数据由明确定义的数据类型组成，其模式可以使其易于搜索。而非结构化数据通常由不容易搜索的数据组成。结构化和非结构化不是表示它们之间有冲突，仅仅是看产品的选择：关系数据库中存储的结构化数据，其它就用非结构化数据。<br>在关系数据库中的结构化数据，已经有非常成熟的分析方法，而非结构化数据，没有一个直接的通用的使用方法，并且非结构化数据越来越多，越来越丰富，包含的信息也越发又价值。怎么从这些非结构化数据中获取信息，是产品迫切需要的。<br>一般的数据分析/挖掘，针对的还只是日志数据，这里也重点对于日志的结构化进行说明。</p>
+<h3 id="二-ETL-数据的抽取-Extract-转换-Transform-加载-Load"><a href="#二-ETL-数据的抽取-Extract-转换-Transform-加载-Load" class="headerlink" title="二. ETL:数据的抽取(Extract)转换(Transform)加载(Load)"></a>二. ETL:数据的抽取(Extract)转换(Transform)加载(Load)</h3><p>数据即金矿，庞大且杂乱的行为日志让人有一种”望宝山而不入”的无力感。大家往往是拥有数量庞大的”文件”，只有当经过处理，按照人们的要求进行结构化之后，才能控制数据，才是真正意义上的拥有了”数据”。</p>
+<h4 id="1-数据的抽取"><a href="#1-数据的抽取" class="headerlink" title="1. 数据的抽取"></a>1. <font size="4">数据的抽取</font></h4><p>从各个数据源获得数据，详见 <a href="/2019/05/16/1-2-2-数据接入/">数据接入</a></p>
+<h4 id="2-转换-清洗"><a href="#2-转换-清洗" class="headerlink" title="2. 转换/清洗"></a>2. <font size="4">转换/清洗</font></h4><p>在整个数据处理流程中都是极为重要的一步，把异常的数据处理掉，是后续使用数据的保障。</p>
+<ol>
+<li>清洗<br>顾名思义，是把”脏”数据清理掉。保证留给后面的数据都是有意义的。<br>数据清洗，不是单纯的”抛弃”，而是根据具体的规则把异常数据分类标示出来，对这些异常数据量级进行监控，也可以辅助发现项目的问题。<ul>
+<li>错误的数据<br>乱码: 经过加密/编码的数据，在传输过程中丢失部分信息，导致数据有乱码，无法正常使用。<br>异常的数据: 会给后续计算带来非常大影响的数据，比如消费数据存了一个超出double存储界限的值。</li>
+<li>不完整的数据<br>某些重要的数据组合都没有值，则认为该条日志无意义。</li>
+<li>重复的数据<br>一般出现在维表数据中，某key出现多次，需要处理成唯一值。</li>
+</ul>
+</li>
+<li>转换<br>数据归一。由于日志是由不同系统产生的，不同系统间对数据的定义不同，在做统一的数据仓库时需要把相同意义不同表现形式的数据转化统一。<ul>
+<li>不一致数据的转换<br>比如性别，在不同系统中可能标识为 0/1,F/M,M/W 等等，为了统一使用，需要统一成一种表现形式。</li>
+<li>计量单位的转换<br>长度单位 km/m/cm，金钱单位 千元/元/分，需要统一成一种规范。</li>
+<li>缺失数据的补充<br>包括补0/平均值/众数/中位数等方法对缺失的数据进行补充。</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-加载"><a href="#3-加载" class="headerlink" title="3. 加载"></a>3. <font size="4">加载</font></h4><p>从文件到数据库的步骤，让用户可以通过结构化语言来进行数据查询/计算。</p>
+<ul>
+<li>逐条加载: mysql等关系数据库。</li>
+<li>批量加载: hive/mysql都可以。</li>
+</ul>
+<h3 id="三-ETL的方法"><a href="#三-ETL的方法" class="headerlink" title="三. ETL的方法"></a>三. ETL的方法</h3><ul>
+<li>实时处理<br>源头数据处理: flume自带功能。<br>数据使用端处理: 实时计算逻辑时处理。</li>
+<li>离线处理<br>mr/spark<br>对比传统的etl工具，比如kettle，它本身需要有自己的集群，本质上是本地执行任务来进行数据处理，mr/spark就方便很多。</li>
+</ul>
+<h3 id="四-END"><a href="#四-END" class="headerlink" title="四. END"></a>四. END</h3><p>数据处理是一个重要且长期的事情，需要随时调整。并且公司对数据的态度不同，数据处理的难度也不同。一个更重视数据的公司，在业务开发的时候回注意数据的产生，遵守数据团队的日志规范，这时产生的数据就更容易被处理使用。反之，业务产生的日志只是为了定位问题，无视整体的规范，那处理难度就非常大。</p>
+
       
     </div>
     
@@ -472,7 +494,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -494,7 +516,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -508,9 +530,9 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/people/da-ming-26/activities" target="_blank" title="知乎">
+                    <a href="https://www.jianshu.com/u/6d36929cd6cf" target="_blank" title="简书">
                       
-                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                        <i class="fa fa-fw fa-globe"></i>简书</a>
                   </span>
                 
             </div>
@@ -537,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-非结构化数据转化成结构化数据"><span class="nav-number">1.</span> <span class="nav-text">1. 非结构化数据转化成结构化数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化数据-vs-非结构化数据"><span class="nav-number">1.1.</span> <span class="nav-text">结构化数据 vs 非结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据转化"><span class="nav-number">1.2.</span> <span class="nav-text">数据转化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-结构化数据-vs-非结构化数据"><span class="nav-number">1.</span> <span class="nav-text">一. 结构化数据 vs 非结构化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-ETL-数据的抽取-Extract-转换-Transform-加载-Load"><span class="nav-number">2.</span> <span class="nav-text">二. ETL:数据的抽取(Extract)转换(Transform)加载(Load)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数据的抽取"><span class="nav-number">2.1.</span> <span class="nav-text">1. 数据的抽取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-转换-清洗"><span class="nav-number">2.2.</span> <span class="nav-text">2. 转换/清洗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-加载"><span class="nav-number">2.3.</span> <span class="nav-text">3. 加载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-ETL的方法"><span class="nav-number">3.</span> <span class="nav-text">三. ETL的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-END"><span class="nav-number">4.</span> <span class="nav-text">四. END</span></a></li></ol></div>
             
 
           </div>
@@ -582,7 +604,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.5k字</span>
+  <span class="post-count">博客全站共9.5k字</span>
 </div>
         
 <div class="busuanzi-count">
