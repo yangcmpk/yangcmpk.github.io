@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="附 《数据仓库》读书笔记">
+<meta name="description" content="并非概念，个人看法 数据仓库-数据的仓库顾名思义，所有的数据存储管理得地方，就是数据仓库。 意义每个产品，都是由多个功能组成，每个功能又都是独立开发的，每个团队有自己的日志习惯。比如电商，下单/支付/收获/评价，分别是不同的系统，但是这些步骤是一个完整的流程。当有统计需求的时候，需要从多个团队拿到各自的数据再计算。计算逻辑比较复杂繁琐，特别是别的系统数据有修改的时候，毫不知情。另外比较大的问题是，">
 <meta name="keywords" content="数据仓库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据仓库">
 <meta property="og:url" content="http://yoursite.com/2019/06/28/1-2-4-数据仓库/index.html">
 <meta property="og:site_name" content="做数据的攻城锤">
-<meta property="og:description" content="附 《数据仓库》读书笔记">
+<meta property="og:description" content="并非概念，个人看法 数据仓库-数据的仓库顾名思义，所有的数据存储管理得地方，就是数据仓库。 意义每个产品，都是由多个功能组成，每个功能又都是独立开发的，每个团队有自己的日志习惯。比如电商，下单/支付/收获/评价，分别是不同的系统，但是这些步骤是一个完整的流程。当有统计需求的时候，需要从多个团队拿到各自的数据再计算。计算逻辑比较复杂繁琐，特别是别的系统数据有修改的时候，毫不知情。另外比较大的问题是，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-28T04:29:50.769Z">
+<meta property="og:updated_time" content="2019-07-01T08:44:24.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据仓库">
-<meta name="twitter:description" content="附 《数据仓库》读书笔记">
+<meta name="twitter:description" content="并非概念，个人看法 数据仓库-数据的仓库顾名思义，所有的数据存储管理得地方，就是数据仓库。 意义每个产品，都是由多个功能组成，每个功能又都是独立开发的，每个团队有自己的日志习惯。比如电商，下单/支付/收获/评价，分别是不同的系统，但是这些步骤是一个完整的流程。当有统计需求的时候，需要从多个团队拿到各自的数据再计算。计算逻辑比较复杂繁琐，特别是别的系统数据有修改的时候，毫不知情。另外比较大的问题是，">
 
 
 
@@ -348,7 +348,56 @@
       
 
       
-        <p>附 <a href="/2019/06/28/1-2-4-10-数据仓库读书笔记/">《数据仓库》读书笔记</a></p>
+        <p><strong>并非概念，个人看法</strong></p>
+<h1 id="数据仓库-数据的仓库"><a href="#数据仓库-数据的仓库" class="headerlink" title="数据仓库-数据的仓库"></a>数据仓库-数据的仓库</h1><p>顾名思义，所有的数据存储管理得地方，就是数据仓库。</p>
+<h1 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h1><p>每个产品，都是由多个功能组成，每个功能又都是独立开发的，每个团队有自己的日志习惯。<br>比如电商，下单/支付/收获/评价，分别是不同的系统，但是这些步骤是一个完整的流程。<br>当有统计需求的时候，需要从多个团队拿到各自的数据再计算。计算逻辑比较复杂繁琐，特别是别的系统数据有修改的时候，毫不知情。另外比较大的问题是，由于信息同步不及时等原因，多个团队计算相同的指标，会出现较大的差异，这样会给决策者带来困惑。这个时候，就需要有一个地方，所有人把数据产出到这里，统一处理，获取数据。<br>直销固然流程少，但是有中间商也很重要。</p>
+<h1 id="数据仓库的特点"><a href="#数据仓库的特点" class="headerlink" title="数据仓库的特点"></a>数据仓库的特点</h1><p>标准的定义来说:数据仓库是一个<strong>面向主题</strong>的、<strong>集成</strong>的、<strong>非易失</strong>的且<strong>随时间变化</strong>的数据集合，用来支持管理人员的决策。</p>
+<ul>
+<li>面向主题<br>主题是一个抽象的概念，指的是某一个方向一系列关联比较密切的数据的集合。公司里一部分人关注，其他人不是那么关注。<br>比如客户/商家/物品/订单等主题。</li>
+<li>集成<br>由于数据是由多个系统产生的，在没有统一规范之前，每个系统的开发人员有自己的规范，相同的信息会用多种不同的方式来表达，比如性别，有的系统用0/1，有的用f/m，有的用x/y，在数据仓库这里就必须要统一起来，供后续使用。(一般在etl时就处理)<br>同时，我理解另外有一种行为也可以称之为数据集成：一系列连续的行为从分散到集成到一起。比如网购，从下单/付费/收获/评价。这些行为可由订单id这个唯一key关联起来，整合到一起。主要注意的是行为的延后性，比如下单/付费是同一天，收获/评价是同一天，但是这四个行为很可能不是一天，需要考虑这种情况下的数据建设。</li>
+<li>非易失<br>进入数据仓库中的数据，无法修改，长时间保留。</li>
+<li>随时间变化<br>与业务数据库中的状态数据不同，数据仓库中的数据有着时间属性，如果添加了新的字段，在那个时间点之前的数据中，该字段没有意义。</li>
+</ul>
+<h1 id="数据仓库的发展"><a href="#数据仓库的发展" class="headerlink" title="数据仓库的发展"></a>数据仓库的发展</h1><p>数据仓库是随着需求增多而产生的。</p>
+<ul>
+<li>简单报表<br>单纯的统计pvuv等由单一数据可产出的指标。针对该份日志写程序处理既可。</li>
+<li>主题:部门级需求<br>随着产品发展，统计不单是为了出简单的报表，还可以对功能进行优化，比如说登陆位置对登陆率的影响。通过对其监控，可以得知此次改版是否达到预期。</li>
+<li>数据仓库:产品级需求<br>使用产品所有数据源的数据，通过整体的分析，可以得知用户对产品各个功能的感受，来进行产品/策略上的优化。</li>
+</ul>
+<h1 id="数据仓库建设步骤"><a href="#数据仓库建设步骤" class="headerlink" title="数据仓库建设步骤"></a>数据仓库建设步骤</h1><ul>
+<li>数据接入/清洗<ol>
+<li><a href="/2019/05/16/1-2-2-数据接入/">数据接入</a></li>
+<li><a href="/2019/05/17/1-2-3-数据规范化/">数据规范化-ETL</a></li>
+</ol>
+</li>
+<li>数据集成<ol>
+<li>规范化中已经进行的步骤：统一化</li>
+<li>同一流程中的数据根据唯一键整合到一个表中。</li>
+</ol>
+</li>
+<li>初步聚合<br>较细粒度的聚合，包含所有的维度，目的是降低数据量级，以及指标逻辑的统一，保证数据的一致性。</li>
+<li>主题抽取<br>用户/产品/订单等主题的建设</li>
+<li>报表分析使用<br>对外提供数据。</li>
+</ul>
+<h1 id="数据仓库层级"><a href="#数据仓库层级" class="headerlink" title="数据仓库层级"></a>数据仓库层级</h1><ul>
+<li>ODS:操作数据层<br>从数据库直接导入过来的数据，或者日志直接解析获得的数据，是<strong>未处理</strong>的原始数据，以便进行问题排查使用。</li>
+<li>DW:数据仓库<ul>
+<li>DWD:明细数据层<br>数据清洗/规范化，让数据可用。</li>
+<li>DWB:基础数据层<br>数据集成+聚合，计算逻辑下沉到这一层，后续使用简单，一致。</li>
+</ul>
+</li>
+<li>DM:数据主题<br>抽取相关性高的数据组建主题。可以是大的主题，比如用户，也可能是某个功能团队自己关注的小的数据主题。</li>
+<li>APP:报表/分析</li>
+</ul>
+<h1 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h1><p>随着存储介质越来越廉价，对项目提供的数据不用考虑什么模型了，都冗余到宽表里就行。这样业务使用的时候更简单方便。</p>
+<ul>
+<li>星形模型<br>  一个事实表多个维表。维表与事实表直接关联。使用简单，维护麻烦。</li>
+<li>雪花模型<br>  一个事实表多个维表，维表可能与事实表间接关联。需要多次关联，使用上稍麻烦，但是维护/增加内容简单。</li>
+</ul>
+<p>雪花模型更灵活，星型模型更简便。举个例子，快递的数据，里面有”邮编”的字段，邮编对应的省份城市信息，有两种表现形式。星型模型:存在一个表里，关联一次就可以获取。雪花模型:存在两个表里，一个存省份一个存城市，需要关联两次才能全部获得。<br>除了使用上的区别，在维护维表的时候也不同。比如如果原来只有省份信息，再添加城市的时候，星型模型就需要对原来的表加字段，补充数据，而雪花模型，只需要添加一个新的表就可以了。<br>所以在使用过程中，数据仓库层一般用雪花模型，而主题/应用层用星型模型，虽然有部分冗余，但是使用上更容易。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>数据仓库是一个长期/复杂的事情，优秀的数据仓库会对上层屏蔽数据的问题，保证分析挖掘的数据完整，准确，及时。</p>
+<hr>
+<p>附 <a href="/2019/06/28/1-2-4-10-数据仓库读书笔记/">《数据仓库》读书笔记</a></p>
 
       
     </div>
@@ -443,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -515,6 +573,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库-数据的仓库"><span class="nav-number">1.</span> <span class="nav-text">数据仓库-数据的仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#意义"><span class="nav-number">2.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库的特点"><span class="nav-number">3.</span> <span class="nav-text">数据仓库的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库的发展"><span class="nav-number">4.</span> <span class="nav-text">数据仓库的发展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库建设步骤"><span class="nav-number">5.</span> <span class="nav-text">数据仓库建设步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库层级"><span class="nav-number">6.</span> <span class="nav-text">数据仓库层级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据模型"><span class="nav-number">7.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -553,7 +627,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.5k字</span>
+  <span class="post-count">博客全站共11.1k字</span>
 </div>
         
 <div class="busuanzi-count">
