@@ -3,8 +3,26 @@
 
     
   <url>
+    <loc>http://yoursite.com/2019/07/04/1-2-7-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF/</loc>
+    <lastmod>2019-07-08T07:38:21.576Z</lastmod>
+    <data>
+        <display>
+        <title>用户增长-AARRR模型</title>
+        <pubTime>2019-07-04T09:46:45.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2019/07/02/1-2-5-%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2019-07-03T09:57:06.110Z</lastmod>
+    <lastmod>2019-07-05T10:05:52.694Z</lastmod>
     <data>
         <display>
         <title>数据分析</title>
@@ -25,12 +43,27 @@
 
     
   <url>
-    <loc>http://yoursite.com/2019/07/03/1-2-9-%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0/</loc>
-    <lastmod>2019-07-03T09:57:03.279Z</lastmod>
+    <loc>http://yoursite.com/2019/05/14/1-2-%E6%8A%80%E8%83%BD/</loc>
+    <lastmod>2019-07-04T09:47:36.074Z</lastmod>
     <data>
         <display>
-        <title>数据中台</title>
-        <pubTime>2019-07-03T08:02:53.000Z</pubTime>
+        <title>数据流程</title>
+        <pubTime>2019-05-14T09:38:03.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2019/07/03/1-2-8-%E5%B7%A5%E5%85%B7%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2019-07-04T09:46:18.377Z</lastmod>
+    <data>
+        <display>
+        <title>工具平台</title>
+        <pubTime>2019-07-03T10:36:18.000Z</pubTime>
         
          
            
@@ -43,15 +76,18 @@
 
     
   <url>
-    <loc>http://yoursite.com/2019/05/14/1-2-%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2019-07-03T09:56:54.954Z</lastmod>
+    <loc>http://yoursite.com/2019/07/03/1-2-9-%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0/</loc>
+    <lastmod>2019-07-03T10:33:20.008Z</lastmod>
     <data>
         <display>
-        <title>数据流程</title>
-        <pubTime>2019-05-14T09:38:03.000Z</pubTime>
+        <title>数据中台</title>
+        <pubTime>2019-07-03T08:02:53.000Z</pubTime>
         
          
            
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
         </display>
     </data>
     </url>
@@ -264,9 +300,9 @@
         <title>攻城锤说数</title>
         <pubTime>2019-05-14T07:50:58.000Z</pubTime>
         
-        <tag>数据分析 </tag>
-         
         <tag>数据仓库 </tag>
+         
+        <tag>数据分析 </tag>
          
         <tag>用户增长 </tag>
          
