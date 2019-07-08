@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="做数据的攻城锤">
 <meta property="og:description" content="并非概念，个人看法 数据仓库-数据的仓库顾名思义，所有的数据存储管理得地方，就是数据仓库。收集全部的数据，对外提供处理后的数据并保证数据一致性与稳定性。提供一站式的数据服务。 意义每个产品，都是由多个功能组成，每个功能又都是独立开发的，每个团队有自己的日志习惯。比如电商，下单/支付/收获/评价，分别是不同的系统，但是这些步骤是一个完整的流程。当有统计需求的时候，需要从多个团队拿到各自的数据再计算。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-02T02:43:13.894Z">
+<meta property="og:updated_time" content="2019-07-08T08:31:01.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据仓库">
 <meta name="twitter:description" content="并非概念，个人看法 数据仓库-数据的仓库顾名思义，所有的数据存储管理得地方，就是数据仓库。收集全部的数据，对外提供处理后的数据并保证数据一致性与稳定性。提供一站式的数据服务。 意义每个产品，都是由多个功能组成，每个功能又都是独立开发的，每个团队有自己的日志习惯。比如电商，下单/支付/收获/评价，分别是不同的系统，但是这些步骤是一个完整的流程。当有统计需求的时候，需要从多个团队拿到各自的数据再计算。">
@@ -395,7 +395,7 @@
 <li>雪花模型<br>  一个事实表多个维表，维表可能与事实表间接关联。需要多次关联，使用上稍麻烦，但是维护/增加内容简单。</li>
 </ul>
 <p>雪花模型更灵活，星型模型更简便。举个例子，快递的数据，里面有”邮编”的字段，邮编对应的省份城市信息，有两种表现形式。星型模型:存在一个表里，关联一次就可以获取。雪花模型:存在两个表里，一个存省份一个存城市，需要关联两次才能全部获得。<br>除了使用上的区别，在维护维表的时候也不同。比如如果原来只有省份信息，再添加城市的时候，星型模型就需要对原来的表加字段，补充数据，而雪花模型，只需要添加一个新的表就可以了。<br>所以在使用过程中，数据仓库层一般用雪花模型，而主题/应用层用星型模型，虽然有部分冗余，但是使用上更容易。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>数据仓库是一个长期/复杂的事情，优秀的数据仓库会对上层屏蔽数据的问题，保证分析挖掘的数据完整，准确，及时。</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>数据仓库是一个长期/复杂的事情，优秀的数据仓库会对上层屏蔽数据的问题，保证分析挖掘的数据完整，准确，及时。</p>
 <hr>
 <p>附 <a href="/2019/06/28/1-2-4-10-数据仓库读书笔记/">《数据仓库》读书笔记</a></p>
 
@@ -582,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库-数据的仓库"><span class="nav-number">1.</span> <span class="nav-text">数据仓库-数据的仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#意义"><span class="nav-number">2.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库的特点"><span class="nav-number">3.</span> <span class="nav-text">数据仓库的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库的发展"><span class="nav-number">4.</span> <span class="nav-text">数据仓库的发展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库建设步骤"><span class="nav-number">5.</span> <span class="nav-text">数据仓库建设步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库层级"><span class="nav-number">6.</span> <span class="nav-text">数据仓库层级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据模型"><span class="nav-number">7.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库-数据的仓库"><span class="nav-number">1.</span> <span class="nav-text">数据仓库-数据的仓库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#意义"><span class="nav-number">2.</span> <span class="nav-text">意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库的特点"><span class="nav-number">3.</span> <span class="nav-text">数据仓库的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库的发展"><span class="nav-number">4.</span> <span class="nav-text">数据仓库的发展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库建设步骤"><span class="nav-number">5.</span> <span class="nav-text">数据仓库建设步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据仓库层级"><span class="nav-number">6.</span> <span class="nav-text">数据仓库层级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据模型"><span class="nav-number">7.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">8.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
@@ -627,7 +627,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.6k字</span>
+  <span class="post-count">博客全站共15.8k字</span>
 </div>
         
 <div class="busuanzi-count">

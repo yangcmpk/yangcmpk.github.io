@@ -3,12 +3,110 @@
 
     
   <url>
+    <loc>http://yoursite.com/2019/07/03/1-2-9-%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0/</loc>
+    <lastmod>2019-07-08T08:55:37.837Z</lastmod>
+    <data>
+        <display>
+        <title>数据中台</title>
+        <pubTime>2019-07-03T08:02:53.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2019/07/04/1-2-7-%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF/</loc>
-    <lastmod>2019-07-08T07:38:21.576Z</lastmod>
+    <lastmod>2019-07-08T08:53:06.490Z</lastmod>
     <data>
         <display>
         <title>用户增长-AARRR模型</title>
         <pubTime>2019-07-04T09:46:45.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2019/05/15/1-2-6-%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/</loc>
+    <lastmod>2019-07-08T08:34:42.672Z</lastmod>
+    <data>
+        <display>
+        <title>用户画像</title>
+        <pubTime>2019-05-15T10:36:48.000Z</pubTime>
+        
+        <tag>分析 </tag>
+         
+        <tag>用户画像 </tag>
+         
+        <tag>用户分析 </tag>
+         
+         
+           
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2019/06/28/1-2-4-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/</loc>
+    <lastmod>2019-07-08T08:31:01.967Z</lastmod>
+    <data>
+        <display>
+        <title>数据仓库</title>
+        <pubTime>2019-06-28T03:58:11.000Z</pubTime>
+        
+        <tag>数据仓库 </tag>
+         
+         
+           
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2019/05/17/1-2-3-%E6%95%B0%E6%8D%AE%E8%A7%84%E8%8C%83%E5%8C%96/</loc>
+    <lastmod>2019-07-08T08:30:29.840Z</lastmod>
+    <data>
+        <display>
+        <title>数据规范化-ETL</title>
+        <pubTime>2019-05-17T08:53:27.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2019/05/16/1-2-2-%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%85%A5/</loc>
+    <lastmod>2019-07-08T08:17:05.417Z</lastmod>
+    <data>
+        <display>
+        <title>数据接入</title>
+        <pubTime>2019-05-16T10:34:35.000Z</pubTime>
         
          
            
@@ -76,68 +174,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2019/07/03/1-2-9-%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0/</loc>
-    <lastmod>2019-07-03T10:33:20.008Z</lastmod>
-    <data>
-        <display>
-        <title>数据中台</title>
-        <pubTime>2019-07-03T08:02:53.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2019/05/15/1-2-6-%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/</loc>
-    <lastmod>2019-07-03T03:41:42.301Z</lastmod>
-    <data>
-        <display>
-        <title>用户画像</title>
-        <pubTime>2019-05-15T10:36:48.000Z</pubTime>
-        
-        <tag>分析 </tag>
-         
-        <tag>用户画像 </tag>
-         
-        <tag>用户分析 </tag>
-         
-         
-           
-             
-              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2019/06/28/1-2-4-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/</loc>
-    <lastmod>2019-07-02T02:43:13.894Z</lastmod>
-    <data>
-        <display>
-        <title>数据仓库</title>
-        <pubTime>2019-06-28T03:58:11.000Z</pubTime>
-        
-        <tag>数据仓库 </tag>
-         
-         
-           
-             
-              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2019/06/28/1-2-4-10-%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-07-01T04:16:51.849Z</lastmod>
     <data>
@@ -160,24 +196,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2019/05/17/1-2-3-%E6%95%B0%E6%8D%AE%E8%A7%84%E8%8C%83%E5%8C%96/</loc>
-    <lastmod>2019-06-28T04:27:19.301Z</lastmod>
-    <data>
-        <display>
-        <title>数据规范化-ETL</title>
-        <pubTime>2019-05-17T08:53:27.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2019/06/18/2-3-3-kylin%E7%9A%84%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8Bhybrid/</loc>
     <lastmod>2019-06-24T11:11:42.781Z</lastmod>
     <data>
@@ -187,24 +205,6 @@
         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2019/05/16/1-2-2-%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%85%A5/</loc>
-    <lastmod>2019-06-24T10:57:56.589Z</lastmod>
-    <data>
-        <display>
-        <title>数据接入</title>
-        <pubTime>2019-05-16T10:34:35.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="说数" url="http://yoursite.com/categories/%E8%AF%B4%E6%95%B0/"/>
-          
         </display>
     </data>
     </url>
